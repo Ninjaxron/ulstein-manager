@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs"></script>
+    <title>Ulstein Data Manager</title>
+
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/dashboard.css">
+    <link rel="stylesheet" href="/CSS/class_and_ID.css">
+</head>
+
+<body>
+    <header class="Header">
+        <img class="UG_logo" src="/Assets/Images/UG_logo.jpg" alt="UG Logo" onclick="reloadFunc()">
+        <script>
+            function reloadFunc() {
+                location.reload()
+            }
+        </script>
+        <div class="headerLineDivider"></div>
+        <h1 class="title">Data Manager</h1>
+        <nav class="navMenu">
+            <div class="menu">
+                Services
+            </div>
+            <div class="menu">
+                Information
+            </div>
+            <div class="menu">
+                Settings
+            </div>
+        </nav>
+    </header>
+    <div>
+        <img class="img" src="/Assets/Images/dashboard.jpg" alt="Image from freepik.com">
+    </div>
+
+    <div>
+        <h1>Upload CSV</h1>
+    </div>
+    <section class="chartPanel">
+        <div class="chart_controls">
+            <div id="chartContainer">
+                <canvas id="ChartItem" width="200%" height="100%"></canvas>
+    
+                
+            </div>
+            <input type="file" id="fileInput" style="display:none;">
+            <button id="fileButton">Load File</button>
+            <button id="zoomInButton">Zoom In</button>
+            <button id="zoomOutButton">Zoom Out</button>
+            <button id="togglePanButton">Toggle Pan</button>
+            <button id="centerGraphButton">Center Graph</button>
+            <button id="configButton">Config</button>
+    
+        </div>
+        
+        <div id="configModal" class="config_Modal">
+            <h2>Settings</h2>
+
+            <label for="chartTitle">Chart Title:</label>
+            <input type="text" id="chartTitle">
+
+            <label for="chartType">Chart Type:</label>
+            <select id="chartType">
+                <option value="bar">Bar Chart</option>
+                <option value="line">Line Chart</option>
+                <option value="radar">Radar Chart</option>
+                <option value="pie">Pie Chart</option>
+                <option value="doughnut">Doughnut Chart</option>
+                <option value="bubble">Bubble Chart</option>
+                <option value="scatter">Scatter Chart</option>
+                <option value="polarArea">Polar Area Chart</option>
+            </select>
+
+            <label for="seriesDropdown">Select Series:</label>
+            <select id="seriesDropdown"></select>
+
+            <label for="seriesName">Series Name:</label>
+            <input type="text" id="seriesName">
+
+            <label for="seriesColor">Series Color:</label>
+            <input type="color" id="seriesColor">
+
+            <button id="saveConfig">Save</button>
+            <button id="closeConfig">Close</button>
+            
+            <img class="UG_logo" src="/Assets/Images/UG_logo.jpg" alt="UG Logo">
+
+        </div>
+    </section>
+
+    <script src="/JS/dashboard.js"></script>
+</body>
+
+</html>
