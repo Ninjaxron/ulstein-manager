@@ -1,0 +1,1 @@
+// putt kode for globale element her, private element er divs som kun bruker på en plass( ei html side ).
